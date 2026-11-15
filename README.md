@@ -37,6 +37,9 @@ Kodava translation uses the backend-only Gemini integration. Configure
 environment variables). `GEMINI_MODEL` is optional and defaults to
 `gemini-3.8-flash`. The Kodava dictionary and historical grammar are loaded
 from `server/data/kodava/` and are cached in memory.
+For temporary 429/503 capacity errors, the server retries automatically. You
+can optionally configure `GEMINI_FALLBACK_MODEL` with another model available
+to your Gemini API key.
 
 Start with the Webdev skill's default-template guide. Platform login, storage, payments and service contracts live in its shared references; read the relevant capability before extending its helper.
 

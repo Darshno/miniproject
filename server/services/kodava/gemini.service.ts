@@ -80,27 +80,42 @@ export async function translateWithGemini(
   if (!apiKey) throw new Error("GEMINI_API_KEY is not configured");
 
   const model = process.env.GEMINI_MODEL ?? "gemini-3.8-flash";
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 30_000);
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: buildGeminiPrompt(sourceText, dictionaryEntries, grammarRules, unknownWords) }] }],
-          generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
-        }),
-        signal: controller.signal,
-      },
-    );
-    if (!response.ok) {
-      const details = await response.text();
-      throw new Error(`Gemini request failed with status ${response.status}: ${details.slice(0, 300)}`);
+  const prompt = buildGeminiPrompt(sourceText, dictionaryEntries, grammarRules, unknownWords);
+  const models = [...new Set([model, process.env.GEMINI_FALLBACK_MODEL].filter(Boolean))] as string[];
+  let lastError = "Gemini request failed";
+
+  for (const currentModel of models) {
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30_000);
+      try {
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${currentModel}:generateContent?key=${encodeURIComponent(apiKey)}`,
+          {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+              generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
+            }),
+            signal: controller.signal,
+          },
+        );
+        if (response.ok) return validateResponse(JSON.parse(extractText(await response.json())));
+
+        const details = (await response.text()).slice(0, 300);
+        lastError = `Gemini request failed with status ${response.status}: ${details}`;
+        if (response.status !== 429 && response.status !== 503) break;
+        await new Promise((resolve) => setTimeout(resolve, 1000 * 2 ** attempt));
+      } catch (error) {
+        lastError = error instanceof Error ? error.message : "Gemini request failed";
+        if (attempt === 2) break;
+        await new Promise((resolve) => setTimeout(resolve, 1000 * 2 ** attempt));
+      } finally {
+        clearTimeout(timeout);
+      }
     }
-    return validateResponse(JSON.parse(extractText(await response.json())));
-  } finally {
-    clearTimeout(timeout);
   }
+
+  throw new Error(`${lastError}. Gemini may be temporarily overloaded; try again shortly.`);
 }
