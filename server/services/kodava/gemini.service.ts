@@ -79,7 +79,7 @@ export async function translateWithGemini(
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY is not configured");
 
-  const model = process.env.GEMINI_MODEL ?? "gemini-2.0-flash";
+  const model = process.env.GEMINI_MODEL ?? "gemini-2.5-flash";
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30_000);
   try {
@@ -95,7 +95,10 @@ export async function translateWithGemini(
         signal: controller.signal,
       },
     );
-    if (!response.ok) throw new Error(`Gemini request failed with status ${response.status}`);
+    if (!response.ok) {
+      const details = await response.text();
+      throw new Error(`Gemini request failed with status ${response.status}: ${details.slice(0, 300)}`);
+    }
     return validateResponse(JSON.parse(extractText(await response.json())));
   } finally {
     clearTimeout(timeout);
