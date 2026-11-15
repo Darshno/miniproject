@@ -1,0 +1,984 @@
+{
+  "metadata": {
+    "title": "Grammar rules extracted from An Elementary Grammar of the Coorg Language",
+    "author": "Captain B. A. Cole",
+    "publication": "Bangalore, Wesleyan Mission Press, 1867",
+    "source": "Uploaded PDF, PDF pages 17–68 (printed pages 15–50)",
+    "scope_warning": "Historical description of the Coorg/Kodava speech recorded in 1867. Not a verified description of every present-day dialect. The book uses an old transcription and the extracted text contains OCR errors. Forms and rules marked medium/low confidence must be checked against page images and fluent speakers.",
+    "confidence_legend": {
+      "high": "Clearly stated in readable source text",
+      "medium": "Rule is stated but exact forms/transcription need checking",
+      "low": "OCR or source wording is unclear; do not use as a hard rule"
+    }
+  },
+  "language_overview": {
+    "parts_of_speech": [
+      "noun",
+      "adjective",
+      "pronoun",
+      "verb",
+      "adverb",
+      "postposition",
+      "conjunction",
+      "interjection"
+    ],
+    "syntax_note": {
+      "source_claim": "The author says the rules of syntax are identical with Canarese (Kannada).",
+      "confidence": "medium",
+      "caution": "This is the author's historical claim, not an independently verified modern linguistic conclusion."
+    }
+  },
+  "orthography_and_pronunciation": {
+    "writing_note": "The author describes the speech as primarily spoken, uses Kannada characters for the written language, and Roman letters to indicate pronunciation.",
+    "vowels": {
+      "inventory": "Short vowels, long vowels and diphthongs are distinguished.",
+      "special_vowels": [
+        {
+          "name": "half_or_silent_u",
+          "description": "A special vowel quality compared by the author to the u in English 'creature'; he proposed marking it with a dot below the vowel.",
+          "confidence": "medium"
+        },
+        {
+          "name": "special_dative_vowel",
+          "description": "A vowel in the dative suffix compared by the author to French eu in 'queue'.",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "consonants": {
+      "classes": [
+        "guttural",
+        "palatal",
+        "cerebral_or_retroflex",
+        "dental",
+        "labial"
+      ],
+      "series": [
+        "unaspirated",
+        "aspirated",
+        "voiced",
+        "voiced_aspirated",
+        "nasal"
+      ],
+      "historical_observations": [
+        {
+          "rule": "The author says guttural consonants are unknown or unused in the dialect as he recorded it.",
+          "confidence": "medium"
+        },
+        {
+          "rule": "The author says the consonant corresponding to ha is not used and may be replaced by another consonant or an initial vowel.",
+          "confidence": "medium"
+        },
+        {
+          "rule": "The author observes that initial Kannada ha in some cognate words corresponds to an initial vowel in the Coorg form.",
+          "confidence": "medium"
+        },
+        {
+          "rule": "The author notes p and h are often interchangeable, and l and d (including sounds represented as li/ri in the old transcription) are sometimes interchangeable.",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  "nouns": {
+    "types": [
+      "common",
+      "proper",
+      "verbal",
+      "derivative",
+      "compound",
+      "relationship_or_kinship"
+    ],
+    "verbal_nouns": {
+      "rule": "A verbal noun is formed by adding an ending transcribed by the author as -vadu to a verb root.",
+      "example": {
+        "root": "yeladu (write)",
+        "derived_form": "yeladu-vadu",
+        "meaning": "the act of writing"
+      },
+      "confidence": "medium"
+    },
+    "derivative_nouns": [
+      {
+        "function": "agent_or_doer",
+        "endings_as_transcribed": [
+          "-kāru",
+          "-gāru / -yāru"
+        ],
+        "examples": [
+          {
+            "base": "angadi (shop)",
+            "derived": "angadikāru",
+            "meaning": "shopkeeper"
+          },
+          {
+            "base": "bute (hunting)",
+            "derived": "bātegāru",
+            "meaning": "hunter"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "function": "person_possessing_a_quality_or_attribute",
+        "endings_as_transcribed": [
+          "-kāru",
+          "-vantu"
+        ],
+        "examples": [
+          {
+            "base": "budhi (wisdom)",
+            "derived": "budhikāru / budhivanta",
+            "meaning": "wise person"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "function": "abstract_or_quality_noun",
+        "endings_as_transcribed": [
+          "-ike",
+          "-tana (forms vary in the source)"
+        ],
+        "examples": [
+          {
+            "base": "makka (children)",
+            "derived": "makkalatike",
+            "meaning": "childhood"
+          },
+          {
+            "base": "bada (poor)",
+            "derived": "badatana",
+            "meaning": "poverty"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "compound_nouns": {
+      "rule": "Two nouns may be joined to form a compound noun.",
+      "examples": [
+        {
+          "form": "mane-padi",
+          "meaning": "house-door"
+        },
+        {
+          "form": "māt-koravukāru",
+          "meaning": "head of the house"
+        }
+      ],
+      "confidence": "medium"
+    },
+    "gender": {
+      "categories": [
+        "masculine",
+        "feminine",
+        "neuter"
+      ],
+      "historical_assignment": {
+        "masculine": "Men and male deities",
+        "feminine": "Women and female deities",
+        "neuter": "Animals and inanimate objects, according to the author's description"
+      },
+      "sex_markers": [
+        {
+          "form": "unu",
+          "meaning": "male"
+        },
+        {
+          "form": "ponnu",
+          "meaning": "female"
+        }
+      ],
+      "feminine_formation": {
+        "rule": "Some masculine nouns ending in the author's transcribed -ru form the feminine by changing/adding -ti.",
+        "example": {
+          "masculine": "mangalakāru",
+          "feminine": "mangalakārati"
+        },
+        "confidence": "medium"
+      }
+    },
+    "number": {
+      "categories": [
+        "singular",
+        "plural"
+      ],
+      "plural_endings_as_transcribed": [
+        "-anga",
+        "-vu",
+        "-a / -ya (OCR unclear)"
+      ],
+      "examples": [
+        {
+          "singular": "annu",
+          "plural": "annanyu",
+          "meaning": "elder brother(s)"
+        },
+        {
+          "singular": "yettu",
+          "plural": "yettuda",
+          "meaning": "bullock(s)"
+        },
+        {
+          "singular": "tange",
+          "plural": "tangeya",
+          "meaning": "younger sister(s)"
+        }
+      ],
+      "irregular_plural": {
+        "singular": "makka (child)",
+        "plural": "mahka / makka",
+        "meaning": "children"
+      },
+      "people_counting": "When cardinal numbers refer to persons, the source says a human-counting element transcribed as -alu is added.",
+      "collective_word": {
+        "form": "jana",
+        "meaning": "people / multitude"
+      },
+      "confidence": "medium"
+    },
+    "declensions": {
+      "overview": "The author identifies five declensions, classified mainly by the ending of the uninflected (crude) noun.",
+      "classes": [
+        {
+          "number": 1,
+          "stem_ending": "silent u or u"
+        },
+        {
+          "number": 2,
+          "stem_ending": "vowel read as e in the OCR"
+        },
+        {
+          "number": 3,
+          "stem_ending": "vowel read as a in the OCR"
+        },
+        {
+          "number": 4,
+          "stem_ending": "vowel read as i in the OCR"
+        },
+        {
+          "number": 5,
+          "stem_ending": "neuter nouns ending in a vowel read as e; author notes an inserted consonant in most oblique cases"
+        }
+      ],
+      "confidence": "medium"
+    },
+    "cases": {
+      "count": 8,
+      "names_and_meanings": {
+        "nominative": "subject / citation form",
+        "accusative": "direct object",
+        "instrumental": "by / with",
+        "dative": "to / for",
+        "ablative": "from",
+        "genitive": "of / possession",
+        "locative": "in / at",
+        "vocative": "direct address"
+      },
+      "suffixes_reported_in_source": [
+        {
+          "case": "nominative",
+          "forms": [
+            "yu",
+            "zero or silent-u ending"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "accusative",
+          "forms": [
+            "forms vary by declension and gender; OCR does not preserve the full table reliably"
+          ],
+          "confidence": "low"
+        },
+        {
+          "case": "instrumental",
+          "forms": [
+            "-gondu",
+            "-inji",
+            "other gender/declension-conditioned forms"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "dative",
+          "forms": [
+            "-keu",
+            "-geu (forms vary by gender and noun class)"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "ablative",
+          "forms": [
+            "-chellitu"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "genitive",
+          "forms": [
+            "-da",
+            "-nda"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "locative",
+          "forms": [
+            "-lu",
+            "-pakka (forms vary by gender and noun class)"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "case": "vocative",
+          "forms": [
+            "declension-dependent ending; exact OCR unclear"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "gender_notes": [
+        "Instrumental endings differ for neuter nouns versus masculine and feminine nouns.",
+        "The dative has more than one form; the source distinguishes a form used across genders and another used for masculine/feminine nouns.",
+        "The locative likewise has forms conditioned by neuter versus masculine/feminine gender."
+      ],
+      "implementation_warning": "Do not apply these as universal suffix replacements. The source gives five declensions and gender-conditioned paradigms. Store full verified paradigms for individual noun classes.",
+      "confidence": "medium"
+    },
+    "quality_nouns": {
+      "rule": "The source describes lengthening of the final syllable before the suffix in several oblique cases of neuter quality nouns. Masculine and feminine quality nouns generally follow ordinary declension.",
+      "affected_cases": [
+        "accusative",
+        "instrumental",
+        "dative",
+        "ablative",
+        "genitive"
+      ],
+      "confidence": "medium"
+    }
+  },
+  "adjectives": {
+    "position": "Adjectives precede the nouns they modify.",
+    "examples": [
+      {
+        "form": "nalla-mara",
+        "meaning": "good tree"
+      },
+      {
+        "form": "pudiya-petti",
+        "meaning": "new box"
+      },
+      {
+        "form": "cheriya-mara",
+        "meaning": "young/small tree"
+      }
+    ],
+    "relative_participles": "Relative participles may precede nouns as modifiers; 'who' or 'which' is implicit.",
+    "inventory_note": "The author says there are comparatively few adjectives and that the gap is often supplied with participial forms.",
+    "comparison": {
+      "comparative": "No regular comparative morphology is described. Comparison is commonly expressed by adding an element transcribed as -kinji to a dative form.",
+      "superlative": "The author also describes comparison against a group using a plural locative form with the same comparative element.",
+      "confidence": "medium"
+    }
+  },
+  "pronouns": {
+    "general_rule": "Pronouns are declined like nouns.",
+    "types": [
+      "personal",
+      "demonstrative",
+      "reciprocal",
+      "numeral",
+      "indeterminate",
+      "quantity",
+      "interrogative"
+    ],
+    "personal": {
+      "first_person_singular": {
+        "nominative": "nānu",
+        "accusative": "enna"
+      },
+      "first_person_plural": {
+        "nominative": "genga",
+        "accusative": "yengala"
+      },
+      "second_person_singular": {
+        "nominative": "nīnu",
+        "accusative": "ninna"
+      },
+      "second_person_plural": {
+        "nominative": "ninga (transcription uncertain)",
+        "accusative": "ningala"
+      },
+      "note": "The source provides full case paradigms and describes stem-vowel changes in oblique cases. Check exact forms against the page image.",
+      "confidence": "medium"
+    },
+    "demonstrative": {
+      "remote": {
+        "masculine": {
+          "form": "avu",
+          "meaning": "he / that man"
+        },
+        "feminine": {
+          "form": "avu (separate paradigm)",
+          "meaning": "she / that woman"
+        },
+        "neuter": {
+          "form": "adu",
+          "meaning": "it / that thing"
+        }
+      },
+      "proximate": {
+        "masculine": {
+          "form": "ivu",
+          "meaning": "he / this man"
+        },
+        "feminine": {
+          "form": "iva",
+          "meaning": "she / this woman"
+        },
+        "neuter": {
+          "form": "idu / elu (OCR uncertain)",
+          "meaning": "this thing"
+        }
+      },
+      "plural_note": "Plural forms differ by gender and are declined similarly to the corresponding remote demonstratives.",
+      "confidence": "low"
+    },
+    "reflexive_reciprocal": {
+      "singular": {
+        "form": "tānu",
+        "meaning": "himself / herself / itself depending on context"
+      },
+      "plural": {
+        "form": "tanga",
+        "meaning": "themselves"
+      },
+      "usage": "Used with reference to a preceding third-person noun or pronoun. The source also records plural use as an honorific second-person singular.",
+      "confidence": "medium"
+    },
+    "indeterminate": {
+      "form": "yella",
+      "meaning": "all",
+      "note": "Nominative described as common across genders; declension differs between neuter and masculine/feminine.",
+      "confidence": "medium"
+    },
+    "numeral": {
+      "examples": [
+        {
+          "form": "wobba",
+          "meaning": "one man"
+        },
+        {
+          "form": "wobba (variant uncertain)",
+          "meaning": "one woman"
+        },
+        {
+          "form": "wondu",
+          "meaning": "one thing"
+        },
+        {
+          "form": "ibba",
+          "meaning": "two men/women"
+        },
+        {
+          "form": "dandu",
+          "meaning": "two things"
+        }
+      ],
+      "declension": "The source says numeral pronouns are declined like demonstratives, with a special plural formation.",
+      "confidence": "low"
+    },
+    "quantity": {
+      "source_gender_note": "The author records quantity pronouns only for neuter gender.",
+      "examples": [
+        {
+          "form": "achebakeu",
+          "meaning": "so much / as many as those"
+        },
+        {
+          "form": "ichchakeu",
+          "meaning": "so much / as many as these"
+        }
+      ],
+      "confidence": "medium"
+    },
+    "interrogative": {
+      "examples": [
+        {
+          "form": "yennu / yenn(a)",
+          "meaning": "what?"
+        },
+        {
+          "form": "yechchakeu",
+          "meaning": "how much?"
+        }
+      ],
+      "declension": "The source says interrogative pronouns are declined like demonstrative pronouns.",
+      "confidence": "medium"
+    }
+  },
+  "verbs": {
+    "classes": [
+      "active",
+      "neuter",
+      "causal"
+    ],
+    "passive": "The author explicitly states that a passive verb form is absent in the dialect as he recorded it, and that the active form is used instead.",
+    "root": "The verb root is generally the same as the second-person singular imperative.",
+    "conjugations": [
+      {
+        "number": 1,
+        "root_ending": "silent or half u"
+      },
+      {
+        "number": 2,
+        "root_ending": "e"
+      },
+      {
+        "number": 3,
+        "root_ending": "a"
+      },
+      {
+        "number": 4,
+        "root_ending": "i"
+      }
+    ],
+    "moods": {
+      "simple": [
+        "infinitive",
+        "imperative",
+        "negative",
+        "affirmative"
+      ],
+      "compound": [
+        "potential",
+        "subjunctive"
+      ],
+      "infinitive": "Impersonal; formed from the root with an infinitive ending that varies by conjugation.",
+      "imperative": "Root plus person/number endings. The source gives distinct first-, second- and third-person forms and plural forms.",
+      "negative": "Root plus negative personal endings. The source says the same negative form may be used with plural pronouns preceding it.",
+      "affirmative": "Simple affirmative tenses are formed from relative participles plus personal endings."
+    },
+    "simple_tenses": [
+      {
+        "name": "present",
+        "formation": "present relative participle + personal endings",
+        "meaning": "I do / he does",
+        "confidence": "medium"
+      },
+      {
+        "name": "past",
+        "formation": "past relative participle + personal endings",
+        "meaning": "I did / he did",
+        "confidence": "medium"
+      },
+      {
+        "name": "future_or_contingent_future",
+        "formation": "future relative participle + personal endings",
+        "meaning": "I shall/will do; author compares its sense to a contingent future",
+        "confidence": "medium"
+      }
+    ],
+    "participles_and_gerunds": {
+      "illustrative_root": "mādu (do)",
+      "gerunds": [
+        {
+          "tense": "present",
+          "form": "mādiyandu",
+          "meaning": "doing"
+        },
+        {
+          "tense": "past",
+          "form": "māditu",
+          "meaning": "having done"
+        },
+        {
+          "tense": "negative",
+          "form": "mādatte (transcription uncertain)",
+          "meaning": "not having done"
+        }
+      ],
+      "relative_participles": [
+        {
+          "tense": "present_and_future",
+          "form": "māduva (transcription normalized)",
+          "meaning": "who/which does or will do"
+        },
+        {
+          "tense": "past",
+          "form": "mādunu (transcription normalized)",
+          "meaning": "who/which did"
+        },
+        {
+          "tense": "negative",
+          "form": "mādatu (transcription normalized)",
+          "meaning": "who/which does/did/will not do"
+        }
+      ],
+      "compound_relative_participles": {
+        "present": "present gerund + ullu",
+        "past_progressive": "present gerund + inju",
+        "perfect": "past gerund + ullu",
+        "pluperfect": "past gerund + inju",
+        "future_perfect": "past gerund + ippu",
+        "note": "The source gives these patterns for meanings such as 'is/will be doing', 'was doing', 'has done/will have done' and 'had done'. Person endings vary.",
+        "confidence": "medium"
+      }
+    },
+    "compound_tenses": {
+      "count": 6,
+      "auxiliary": "iru (to be)",
+      "rule": "Present, past and future compound tenses combine the present gerund of the lexical verb with the corresponding present, past or future tense of iru. Perfect, pluperfect and future-perfect combine the past gerund with the corresponding tense of iru.",
+      "patterns": [
+        {
+          "name": "present_progressive",
+          "pattern": "present gerund + present iru",
+          "meaning": "am/is/are doing"
+        },
+        {
+          "name": "past_progressive",
+          "pattern": "present gerund + past iru",
+          "meaning": "was/were doing"
+        },
+        {
+          "name": "future_progressive",
+          "pattern": "present gerund + future iru",
+          "meaning": "will be doing"
+        },
+        {
+          "name": "perfect",
+          "pattern": "past gerund + present iru",
+          "meaning": "have/has done"
+        },
+        {
+          "name": "pluperfect",
+          "pattern": "past gerund + past iru",
+          "meaning": "had done"
+        },
+        {
+          "name": "future_perfect",
+          "pattern": "past gerund + future iru",
+          "meaning": "will have done"
+        }
+      ],
+      "confidence": "high"
+    },
+    "causative": {
+      "rule": "Generally formed by adding a causative element transcribed as -chiru to the verb root. In many verbs an inserted -pi- element occurs between the root and causative ending.",
+      "example": {
+        "base": "mādu",
+        "meaning": "do",
+        "causative": "mādu-chiru",
+        "meaning_causative": "cause to do"
+      },
+      "exception_note": "The author says there is no fixed rule for the inserted element and it must be learned by practice.",
+      "confidence": "medium"
+    },
+    "irregular_verbs": {
+      "rule": "Some verbs have irregular present/past gerunds and irregular present/past tense forms, often involving consonant changes attributed by the author to euphony.",
+      "instruction": "Maintain an explicit irregular-verb lexicon; do not force every verb through regular conjugation templates.",
+      "source_examples_meanings": [
+        "stop",
+        "stitch",
+        "ask",
+        "plough",
+        "be",
+        "put",
+        "kill",
+        "burn",
+        "wait/guard",
+        "place",
+        "let go/leave",
+        "appear",
+        "die",
+        "walk",
+        "get up",
+        "eat"
+      ],
+      "confidence": "medium"
+    },
+    "sound_and_form_variation": [
+      "The source records optional vowel lengthening and consonant doubling in some tense and participle environments.",
+      "The author notes that speakers may change the final vowel of first-conjugation roots and the final vowel of second-conjugation roots in speech.",
+      "The author notes a consonant may be inserted in the imperative of the third conjugation for euphony.",
+      "Do not generalize these alternations without checking the specific verb paradigm."
+    ]
+  },
+  "adverbs": {
+    "formation": {
+      "rule": "Adverbs are generally formed by adding an ending transcribed in the source as -uṭṭu / -uṭu to nouns and adjectives.",
+      "examples_as_described": [
+        {
+          "meaning": "beautifully",
+          "base_meaning": "beauty"
+        },
+        {
+          "meaning": "secretly",
+          "base_meaning": "secret"
+        },
+        {
+          "meaning": "straight",
+          "base_meaning": "straight"
+        }
+      ],
+      "confidence": "low"
+    },
+    "declinable_adverbs": {
+      "rule": "Some time and place adverbs are declined like singular nouns and take case endings.",
+      "examples": [
+        {
+          "form": "akkale",
+          "meaning": "then / at that time"
+        },
+        {
+          "form": "innu",
+          "meaning": "now"
+        },
+        {
+          "form": "yela",
+          "meaning": "when"
+        },
+        {
+          "form": "yekkalu",
+          "meaning": "every day"
+        },
+        {
+          "form": "innatu",
+          "meaning": "this kind"
+        },
+        {
+          "form": "polaka",
+          "meaning": "morning"
+        },
+        {
+          "form": "ninnandu",
+          "meaning": "yesterday"
+        },
+        {
+          "form": "mele",
+          "meaning": "tomorrow"
+        },
+        {
+          "form": "alli",
+          "meaning": "there"
+        },
+        {
+          "form": "illi",
+          "meaning": "here"
+        },
+        {
+          "form": "yelli",
+          "meaning": "where"
+        }
+      ],
+      "confidence": "medium"
+    },
+    "indeclinable_adverbs": [
+      {
+        "form": "allale",
+        "meaning": "except"
+      },
+      {
+        "form": "allengi",
+        "meaning": "or / else"
+      },
+      {
+        "form": "melle",
+        "meaning": "slowly / gently"
+      },
+      {
+        "form": "beriya",
+        "meaning": "quickly"
+      },
+      {
+        "form": "perta",
+        "meaning": "many / much"
+      },
+      {
+        "form": "innane",
+        "meaning": "in this manner"
+      },
+      {
+        "form": "piniya",
+        "meaning": "afterwards"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "postpositions": {
+    "note": "The source calls this category postpositions and lists forms that follow a noun phrase. It explicitly says some govern the dative case.",
+    "general": [
+      {
+        "form": "jote",
+        "meaning": "with / along with"
+      },
+      {
+        "form": "hidalu",
+        "meaning": "down"
+      },
+      {
+        "form": "pennye",
+        "meaning": "after"
+      },
+      {
+        "form": "minneje",
+        "meaning": "before / in front"
+      },
+      {
+        "form": "hayva",
+        "meaning": "after / behind"
+      },
+      {
+        "form": "yettamke",
+        "meaning": "until"
+      },
+      {
+        "form": "chellitu",
+        "meaning": "on account of"
+      },
+      {
+        "form": "matte",
+        "meaning": "besides"
+      },
+      {
+        "form": "alateku",
+        "meaning": "as far as"
+      },
+      {
+        "form": "mele",
+        "meaning": "above / upon"
+      },
+      {
+        "form": "bonditu",
+        "meaning": "for / on account of"
+      }
+    ],
+    "dative_governing": [
+      {
+        "form": "angadittu",
+        "meaning": "for"
+      },
+      {
+        "form": "layya",
+        "meaning": "after / behind"
+      },
+      {
+        "form": "minneje",
+        "meaning": "before / in front"
+      },
+      {
+        "form": "meke",
+        "meaning": "above / upon"
+      },
+      {
+        "form": "attate",
+        "meaning": "besides"
+      },
+      {
+        "form": "bonditu",
+        "meaning": "for / on account of"
+      },
+      {
+        "form": "chellitu",
+        "meaning": "on account of"
+      }
+    ],
+    "confidence": "low"
+  },
+  "conjunctions": {
+    "examples": [
+      {
+        "form": "achengi",
+        "meaning": "or"
+      },
+      {
+        "form": "dnakka",
+        "meaning": "but"
+      },
+      {
+        "form": "innyu",
+        "meaning": "yet / still"
+      },
+      {
+        "form": "innu",
+        "meaning": "and / also / even"
+      },
+      {
+        "form": "yenno",
+        "meaning": "whether or not"
+      },
+      {
+        "form": "hida",
+        "meaning": "also"
+      },
+      {
+        "form": "alla",
+        "meaning": "neither / nor"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "interjections": {
+    "examples": [
+      {
+        "form": "ayyo",
+        "meaning": "oh! (sorrow or pain)"
+      },
+      {
+        "form": "ahha",
+        "meaning": "oh! (expressive; context and intonation matter)"
+      },
+      {
+        "form": "aha",
+        "meaning": "surprise, pleasure, admiration or reproach"
+      },
+      {
+        "form": "chha",
+        "meaning": "expressive exclamation"
+      }
+    ],
+    "confidence": "low"
+  },
+  "particles": {
+    "count_reported_by_source": 2,
+    "items": [
+      {
+        "form": "ye",
+        "meaning": "doubt and negation"
+      },
+      {
+        "form": "o",
+        "meaning": "affirmation"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "translator_usage_instructions": {
+    "must_not_assume": [
+      "Do not translate by word-for-word dictionary substitution alone.",
+      "Do not treat the historical transcription as a modern standardized Kodava spelling system.",
+      "Do not assume suffixes apply identically to every noun or verb.",
+      "Do not infer missing forms from Kannada or Tulu without labeling them as hypotheses.",
+      "Do not invent Kodava words when the dictionary lacks an entry."
+    ],
+    "recommended_runtime_steps": [
+      "Retrieve dictionary entries for input words and likely inflected forms.",
+      "Retrieve only relevant grammar sections for each sentence: noun case, pronouns, verb conjugation, tense/aspect, negation or postpositions.",
+      "Give Gemini the source forms and examples and tell it to distinguish verified forms from uncertain forms.",
+      "If a word or construction is missing, return an uncertainty flag rather than fabricate a translation.",
+      "Store irregular verbs and noun declension paradigms as lexical data rather than relying on broad suffix guesses.",
+      "Have fluent Kodava speakers verify every rule and example before treating it as authoritative."
+    ],
+    "suggested_api_response_fields": [
+      "translation",
+      "word_alignment",
+      "grammar_explanation",
+      "unknown_words",
+      "uncertain_rules",
+      "needs_human_review"
+    ]
+  }
+}

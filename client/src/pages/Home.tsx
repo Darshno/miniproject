@@ -15,8 +15,9 @@ import {
   Volume2,
 } from "lucide-react";
 import { containsKannadaUnicode, convertKannadaToPingara } from "../lib/tuluConverter";
+import { trpc } from "../lib/trpc";
 
-type Language = "English" | "Kannada" | "Tulu";
+type Language = "English" | "Kannada" | "Tulu" | "Kodava";
 type CopyKind = "unicode" | "pingara" | null;
 
 type Phrase = {
@@ -32,6 +33,7 @@ const LANGUAGE_CODES: Record<Language, string> = {
   English: "en",
   Kannada: "kn",
   Tulu: "tcy",
+  Kodava: "en",
 };
 
 const PHRASES: Phrase[] = [
@@ -89,6 +91,7 @@ function findPhrase(value: string, source: Language) {
 function selectLabel(language: Language) {
   if (language === "Kannada") return "ಕನ್ನಡ";
   if (language === "Tulu") return "ತುಳು";
+  if (language === "Kodava") return "Kodava";
   return "English";
 }
 
@@ -200,6 +203,8 @@ export default function Home() {
   const [isListening, setIsListening] = useState(false);
   const [showAllExamples, setShowAllExamples] = useState(false);
   const [activeTab, setActiveTab] = useState<"translate" | "alphabets">("translate");
+  const [kodavaNote, setKodavaNote] = useState("");
+  const kodavaTranslation = trpc.kodava.translate.useMutation();
 
   const activePhrase = useMemo(() => findPhrase(sourceText, sourceLanguage), [sourceText, sourceLanguage]);
   const visibleExamples = showAllExamples ? PHRASES : PHRASES.slice(0, 3);
@@ -213,11 +218,28 @@ export default function Home() {
 
     setStatus("translating");
     setCopiedKind(null);
+    setKodavaNote("");
     try {
+      if (targetLanguage === "Kodava") {
+        if (sourceLanguage !== "English") {
+          throw new Error("Kodava translation currently supports English source text only.");
+        }
+        const response = await kodavaTranslation.mutateAsync({ text: sourceText.trim() });
+        setResult(response.translatedText);
+        setKodavaNote(`${response.confidenceLabel}. ${response.warnings.join(" ")}`);
+        setStatus("translated");
+        return;
+      }
       const onlineTranslation = await translateOnline(sourceText.trim(), sourceLanguage, targetLanguage);
       setResult(onlineTranslation);
       setStatus("translated");
-    } catch {
+    } catch (error) {
+      if (targetLanguage === "Kodava") {
+        setResult(error instanceof Error ? error.message : "Kodava translation is unavailable right now.");
+        setKodavaNote("Kodava translation could not be verified.");
+        setStatus("fallback");
+        return;
+      }
       const phrase = findPhrase(sourceText, sourceLanguage);
       if (phrase) {
         setResult(getPhraseValue(phrase, targetLanguage));
@@ -324,7 +346,7 @@ export default function Home() {
               <span>From</span>
               <div className="select-wrap">
                 <select value={sourceLanguage} onChange={(event) => setSourceLanguage(event.target.value as Language)} aria-label="Source language">
-                  {LANGUAGES.map((language) => <option key={language} value={language}>{selectLabel(language)}</option>)}
+                  {LANGUAGES.filter((language) => language !== "Kodava").map((language) => <option key={language} value={language}>{selectLabel(language)}</option>)}
                 </select>
                 <ChevronDown size={17} aria-hidden="true" />
               </div>
@@ -352,7 +374,7 @@ export default function Home() {
               <div className="panel-heading"><span className="panel-language output-tag">{targetLanguage}</span></div>
               <div className={`translation-result status-${status} ${status === "fallback" ? "is-fallback" : ""} ${targetLanguage === "Tulu" && status !== "fallback" ? "tulu-script" : ""}`} aria-live="polite">{status === "translating" ? <span className="loading-line"><span /><span /><span /></span> : result ? displayText(result, targetLanguage) : "Your translation will appear here."}</div>
               <div className="result-footer">
-                <span className="result-note">{status === "fallback" ? <><Lightbulb size={14} /> Try a phrase from the garden below</> : activePhrase?.note ?? "A clear, simple translation"}</span>
+                <span className="result-note">{targetLanguage === "Kodava" && kodavaNote ? <><Info size={14} /> {kodavaNote}</> : status === "fallback" ? <><Lightbulb size={14} /> Try a phrase from the garden below</> : activePhrase?.note ?? "A clear, simple translation"}</span>
                 <div className="result-actions">
                   <button type="button" className={`icon-action ${isListening ? "is-active" : ""}`} onClick={listen} aria-label="Listen to translation" title="Listen"><Volume2 size={17} /></button>
                   <button type="button" className={`copy-action ${copiedKind === "unicode" ? "is-active" : ""}`} onClick={() => copyResult("unicode")} disabled={!result || status === "fallback"} aria-label="Copy Unicode translation" title="Copy original Unicode translation">{copiedKind === "unicode" ? <Check size={14} /> : <Clipboard size={14} />} Unicode</button>

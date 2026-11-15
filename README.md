@@ -32,6 +32,12 @@ obtain them from the Manus project that owns those integrations. A
 `MANUS_JWT_SECRET` may be generated as a random secret, but it must remain
 private. `OWNER_OPEN_ID` is optional.
 
+Kodava translation uses the backend-only Gemini integration. Configure
+`GEMINI_API_KEY` on the server/Render service (never in Vite or browser
+environment variables). `GEMINI_MODEL` is optional and defaults to
+`gemini-2.0-flash`. The Kodava dictionary and historical grammar are loaded
+from `server/data/kodava/` and are cached in memory.
+
 Start with the Webdev skill's default-template guide. Platform login, storage, payments and service contracts live in its shared references; read the relevant capability before extending its helper.
 
 `server/_core/publicConfig.ts` exposes only named public runtime values. Private keys stay server-side. The platform serves managed `/manus-storage/` assets; the application does not register a second proxy.
