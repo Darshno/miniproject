@@ -35,7 +35,7 @@ private. `OWNER_OPEN_ID` is optional.
 Kodava translation uses the backend-only Gemini integration. Configure
 `GEMINI_API_KEY` on the server/Render service (never in Vite or browser
 environment variables). `GEMINI_MODEL` is optional and defaults to
-`gemini-2.5-flash`. The Kodava dictionary and historical grammar are loaded
+`gemini-3.8-flash`. The Kodava dictionary and historical grammar are loaded
 from `server/data/kodava/` and are cached in memory.
 
 Start with the Webdev skill's default-template guide. Platform login, storage, payments and service contracts live in its shared references; read the relevant capability before extending its helper.
