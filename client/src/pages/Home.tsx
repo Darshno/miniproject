@@ -27,7 +27,7 @@ type Phrase = {
   note: string;
 };
 
-const LANGUAGES: Language[] = ["English", "Kannada", "Tulu"];
+const LANGUAGES: Language[] = ["English", "Kannada", "Tulu", "Kodava"];
 
 const LANGUAGE_CODES: Record<Language, string> = {
   English: "en",
